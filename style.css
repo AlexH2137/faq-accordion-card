@@ -8,7 +8,7 @@
 body {
     font-size: .75rem;
     background: linear-gradient(#ab68e9, #6663e7);
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,9 +19,7 @@ body {
     border-radius: 20px;
     display: flex;
     justify-content: space-between;
-    width: 60%;
-    height: 70%;
-    transition: .5s;
+    max-width: 800px;
 }
 
 .img-container {
@@ -55,12 +53,17 @@ h1 {
     padding-top: 40px;
 }
 
+summary {
+    list-style: none; 
+}
+
 .content-container{
     padding: 20px 0;
     margin-right: 40px;
     border-bottom: 1px solid lightgray;
     cursor: pointer;
 }
+
 
 .content-container:hover {
     color: #d48571;
@@ -77,27 +80,19 @@ h1 {
 }
 
 .answer {
-    height: 0px;
-    overflow: hidden;
     transition: .5s;
 }
 
-.container.active {
-    height: 470px;
-    transition: .5s;
-}
-
-.content-container.active .answer {
-    height: 50px;
+.content-container[open] .answer {
     margin-top: 10px;
 }
 
-.content-container.active .question {
+.content-container[open] .question {
     transition: .5s;
     font-weight: bold;
 }
 
-.content-container.active .question::after {
+.content-container[open] .question::after {
     content: url('images/icon-arrow-up.png');
 }
 
